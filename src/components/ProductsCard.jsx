@@ -31,7 +31,7 @@ export default function ProductsCard(props) {
 
         <div className="d-flex justify-content-between align-items-center">
           {stockBadge}
-          <span>only {data.stock} left</span>
+          <span className="text-muted small">only {data.stock} left</span>
         </div>
       </div>
       <div className="card-footer d-flex justify-content-between align-items-center">
