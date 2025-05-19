@@ -1,10 +1,16 @@
-import { useState } from "react";
-import { recipesData } from "../../utils/data";
+import { useEffect, useState } from "react";
+import axios from 'axios';
 import RecipeCard from "../../components/RecpieCard";
 
 export default function RecipeList() {
 
-  const [recipes, setRecipes] = useState(recipesData);
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+      axios.get('https://dummyjson.com/recipes')
+      .then((res)=>setRecipes(res.data.recipes))
+      .catch((err)=>console.log(err))
+  },[]);
 
   const deleteRecpieFromTheList = (id) => {
     const recpiesFilter = recipes.filter((recipe) => recipe.id != id);
