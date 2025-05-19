@@ -2,10 +2,10 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Header from "./components/Header";
-import RecipeList from "./pages/Recpies/RecpieList";
+import ProductsList from "./pages/products/ProductsList";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Welcome from "./pages/Welocme";
-import RecipeInfo from "./pages/Recpies/RecpieInfo";
+import ProductInfo from "./pages/products/ProductInfo";
 import RecipeCounter from "./components/RecipeCounter";
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <div className="container my-5">
         <Routes>
           <Route path="/" element={<Welcome />}/>
-          <Route path="/recipes" element={<RecipeList />} />
-          <Route path="/recipe-info/:id" element={<RecipeInfo />} />
+          <Route path="/products" element={<ProductsList />} />
+          <Route path="/product-info/:id" element={<ProductInfo />} />
           <Route path="/recipe-Counter" element={<RecipeCounter />}/>
         </Routes>
       </div>
