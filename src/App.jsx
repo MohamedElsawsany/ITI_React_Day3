@@ -6,6 +6,7 @@ import RecipeList from "./pages/Recpies/RecpieList";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Welcome from "./pages/Welocme";
 import RecipeInfo from "./pages/Recpies/RecpieInfo";
+import RecipeCounter from "./components/RecipeCounter";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Welcome />}/>
           <Route path="/recipes" element={<RecipeList />} />
           <Route path="/recipe-info/:id" element={<RecipeInfo />} />
+          <Route path="/recipe-Counter" element={<RecipeCounter />}/>
         </Routes>
       </div>
     </BrowserRouter>
