@@ -7,6 +7,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Welcome from "./pages/Welocme";
 import ProductInfo from "./pages/products/ProductInfo";
 import RecipeCounter from "./components/RecipeCounter";
+import Registration from "./pages/users_auth/Registration";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/products" element={<ProductsList />} />
           <Route path="/product-info/:id" element={<ProductInfo />} />
           <Route path="/recipe-Counter" element={<RecipeCounter />}/>
+          <Route path="/registration-page" element={<Registration />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </BrowserRouter>

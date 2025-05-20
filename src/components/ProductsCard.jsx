@@ -1,9 +1,16 @@
 import { Link, useNavigate } from "react-router";
 import Badge from "react-bootstrap/Badge";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/slices/cart";
 
 export default function ProductsCard(props) {
   const { data, onDelete } = props;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(data));
+  };
 
   const redirectToViewProductInfo = (id) => {
     navigate(`/product-info/${id}`);
@@ -37,10 +44,16 @@ export default function ProductsCard(props) {
       <div className="card-footer d-flex justify-content-between align-items-center">
         <div>
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-outline-info"
             onClick={() => redirectToViewProductInfo(data.id)}
           >
             View
+          </button>
+          <button
+            className="btn btn-outline-primary mx-2"
+            onClick={handleAddToCart}
+          >
+            Add to Cart
           </button>
           <button
             className="btn btn-outline-danger mx-2"

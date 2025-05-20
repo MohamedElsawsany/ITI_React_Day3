@@ -33,3 +33,14 @@
 .read-the-docs {
   color: #888;
 }
+/* Make active nav-link text black instead of Bootstrap blue */
+.nav-underline .nav-link.active {
+  color: black !important;
+  border-bottom: 2px solid black; /* Optional: black underline */
+}
+
+/* Optional: Make all nav links black by default */
+.nav-underline .nav-link {
+  color: black;
+}
+
