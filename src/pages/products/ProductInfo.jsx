@@ -1,10 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/slices/cart";
 
 export default function ProductInfo() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+
+  const dispatch = useDispatch();
+    const handleAddToCart = () => {
+      dispatch(addToCart(product));
+    };
 
   useEffect(() => {
     axios
@@ -46,7 +53,7 @@ export default function ProductInfo() {
             </ul>
 
             <div className="d-flex justify-content-between">
-              <button className="btn btn-primary">Add to Cart</button>
+              <button className="btn btn-primary" onClick={handleAddToCart}>Add to Cart</button>
               <Link to="/products" className="btn btn-outline-secondary">
                 Back to Products
               </Link>

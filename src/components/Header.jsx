@@ -32,11 +32,6 @@ export default function Header() {
                 Products
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink to="/recipe-Counter" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>
-                Recipe Counter
-              </NavLink>
-            </li>
           </ul>
 
           <ul className="navbar-nav nav-underline">

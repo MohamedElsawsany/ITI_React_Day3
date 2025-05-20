@@ -56,7 +56,7 @@ export default function ProductsCard(props) {
             Add to Cart
           </button>
           <button
-            className="btn btn-outline-danger mx-2"
+            className="btn btn-outline-danger mx-1"
             onClick={() => onDelete(data.id)}
           >
             Delete
