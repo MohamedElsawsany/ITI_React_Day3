@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -45,12 +47,13 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <NavLink to="/cart" className="nav-link position-relative">
-                Cart : 
-                {cartCount > 0 && (
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {cartCount}
-                  </span>
-                )}
+    <FontAwesomeIcon icon={faShoppingCart} className="me-1" />
+    Cart
+    {cartCount > 0 && (
+      <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        {cartCount}
+      </span>
+    )}
               </NavLink>
             </li>
           </ul>
